@@ -74,7 +74,7 @@ class MapGenerator
         for (unsigned int x = 0; x < map->info.width; x++) {
           unsigned int i = x + (map->info.height - y - 1) * map->info.width;
           if (map->data[i] >= 0 && map->data[i] <= 100) {
-            fputc((100 - map->data[i] * 255 / 100), out);
+            fputc((100 - map->data[i]) * 255 / 100, out);
           } else {
             fputc(128, out);
           }
